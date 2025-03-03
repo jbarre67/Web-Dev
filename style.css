@@ -27,7 +27,14 @@ a {
   font-size: 18px;
   padding: 8px 12px;
 }
+nav ul li:hover {
+  background-color: #444;
+  border-radius: 10px;
+}
 
+nav ul li:hover a {
+  color: #fff;
+}
 h2 {
   margin-top: 0;
 }
