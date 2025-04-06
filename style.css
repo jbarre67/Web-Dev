@@ -92,6 +92,13 @@ td {
   margin: 10px 0 0;
   color: #555;
 }
+.question {
+  margin-bottom: 20px;
+}
+#results {
+  margin-top: 20px;
+  font-weight: bold;
+}
 footer {
   background-color: black;
   color: white;
