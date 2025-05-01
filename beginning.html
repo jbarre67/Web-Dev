@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Evolution</title>
-        <link rel="icon" type="image/x-icon" href="Megaevo.png">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the origins of the World Wide Web and Tim Berners-Lee's contributions.">
+    <title>Beginnings of the Web</title>
+    <link rel="icon" type="image/x-icon" href="Megaevo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header>
         <h1>The Evolution of the Web</h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="beginning.html">The Beginning</a></li>
-            <li><a href="advancements.html">Advancements in HTML</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="quiz.html">Take Quiz</a></li>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="beginning.html">Beginnings</a></li>
+          <li><a href="advancements.html">Advancements</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="resources.html">Resources</a></li>
         </ul>
     </nav>
     <main>
         <section class="box">
-            <h2>Where it all started:</h2>
-
-            <p>The first web browser was invented in 1990 by Tim Berners-Lee during his time at
-            CERN. This browser was initially named WorldWideWeb, but it was later renamed Nexus to
-            avoid confusion with the World Wide Web itself (CERN 2023). These browsers were originally
-            exclusive to NeXT computers, but after a few years of development, they were made available to
-            users worldwide and served as a library for developers.</p>
+            <article>
+                <h2>The First Web Browser</h2>
+                <p>The first web browser was invented in 1990 by Tim Berners-Lee during his time at CERN. This browser was initially named <strong>WorldWideWeb</strong>, but it was later renamed <strong>Nexus</strong> to avoid confusion with the World Wide Web itself <cite>(CERN, 2023)</cite>. These browsers were originally exclusive to NeXT computers, but after a few years of development, they were made available to users worldwide and served as a library for developers.</p>
                 
-            <img src="BernersCERN.jpg" alt="Tim Berners-Lee at Desk" class="rounded-img">
-            <figure>
-                <figcaption>Tim Berners-Lee at his Desk at CERN (1994)</figcaption>
-            </figure>      
-            </section>
-        
+                <figure>
+                    <img src="BernersCERN.jpg" alt="Tim Berners-Lee working at CERN in the early 1990s" class="rounded-img">
+                    <figcaption>Tim Berners-Lee at CERN (1990s)</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h2>Websites and Servers</h2>
+                <p>A web browser would not function without websites and web servers, both of which were also initially created by Tim Berners-Lee. A <strong>website</strong> is a collection of webpages stored together, using hyperlinks to navigate between them. Each website can be accessed through a single domain name and is hosted on at least one web server. When a website is published on a web server, it means the content is stored on that server and can be accessed by users through a browser.</p>
+                
+                <p>A <strong>web server</strong> is a computer system that allows users to store and deliver content over the web. For a server to function, it requires the data to be stored physically on a computer and needs the help of a web browser, such as Google Chrome or Firefox, to display the content. The web server stores various types of files, including HTML files, images, and videos, and uses protocols like HTTP (Hypertext Transfer Protocol) and URLs (Uniform Resource Locators) to deliver the requested content to users. Without a web server, websites would not be accessible, and the browser would have no content to display.</p>
+            </article>
+
+            <article>
+                <h2>How Browsers Work</h2>
+                <p>There are several steps a web browser takes to display the content a user is searching for. This process is often referred to as the <strong>"client-server" model</strong> because the user, through their browser (the client), is requesting information from the server <cite>(SolarWinds, 2024)</cite>.</p>
+                
+                <ol class="process-steps">
+                    <li>A user inputs a URL into the browser’s address bar.</li>
+                    <li>The URL is translated into an IP address using the Domain Name System (DNS). DNS acts like an address book for the internet, using domain names that can be easily remembered to their IP addresses <cite>(Bistricer, 2024)</cite>.</li>
+                    <li>The browser communicates with the web server using HTTP and requests all the data necessary to display the website (HTML, images, documents).</li>
+                    <li>The server delivers the data, and the browser renders a fully functional website.</li>
+                </ol>
+            </article>
+
+            <article>
+                <h2>The Web's Impact</h2>
+                <p>The invention of web browsers, websites, and web servers led to the rapid transformation of the World Wide Web. Now available to billions of people globally, this technology has driven major advancements in research, communication, and commerce. As the WWW continues to evolve, it will remain a cornerstone of human innovation.</p>
+            </article>
+        </section>
     </main>
+    <!--Here is the footer-->
     <footer>
         <p>Jose Barreto Webpage Project for IT 3203 </p>
         <p>

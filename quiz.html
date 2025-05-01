@@ -1,163 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Take Quiz</title>
-        <link rel="icon" type="image/x-icon" href="Megaevo.png">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Evolution Quiz</title>
+    <link rel="icon" type="image/x-icon" href="Megaevo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <header>
         <h1>The Evolution of the Web</h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="beginning.html">The Beginning</a></li>
-            <li><a href="advancements.html">Advancements in HTML</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="quiz.html">Take Quiz</a></li>
-        </ul>
-    </nav>
-  <main>
-    <section class="box">
-    <form id="quizForm">
-      <!-- Q1 -->
-      <div class="question">
-        <p>1. What does HTML stand for?</p>
-        <input type="radio" name="q1" value="a">Hyperlink and Text Markup Language<br>
-        <input type="radio" name="q1" value="b">HyperText Markup Language<br>
-        <input type="radio" name="q1" value="c">Home Tool Markup Language
-      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="beginning.html">Beginnings</a></li>
+        <li><a href="advancements.html">Advancements</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+  </nav>
+    <main>
+        <section class="box">
+            <h2>Web Evolution Quiz</h2>
+            <form id="quizForm">
+                <!-- Q1 -->
+                <div class="question">
+                    <p>1. What does HTML stand for?</p>
+                    <label><input type="radio" name="q1" value="a"> Hyperlink and Text Markup Language</label><br>
+                    <label><input type="radio" name="q1" value="b"> HyperText Markup Language</label><br>
+                    <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label>
+                </div>
 
-      <!-- Q2 -->
-      <div class="question">
-        <p>2. Which version of HTML introduced video support?</p>
-        <input type="radio" name="q2" value="a">HTML 3.2<br>
-        <input type="radio" name="q2" value="b">HTML4<br>
-        <input type="radio" name="q2" value="c">HTML5
-      </div>
+                <!-- Q2 -->
+                <div class="question">
+                    <p>2. Which version of HTML introduced video support?</p>
+                    <label><input type="radio" name="q2" value="a"> HTML 3.2</label><br>
+                    <label><input type="radio" name="q2" value="b"> HTML4</label><br>
+                    <label><input type="radio" name="q2" value="c"> HTML5</label>
+                </div>
 
-      <!-- Q3 -->
-      <div class="question">
-        <p>3. Who created the World Wide Web?</p>
-        <input type="radio" name="q3" value="a">Steve Jobs<br>
-        <input type="radio" name="q3" value="b">Tim Berners-Lee<br>
-        <input type="radio" name="q3" value="c">Robert Noyce
-      </div>
+                <!-- Q3 -->
+                <div class="question">
+                    <p>3. Who created the World Wide Web?</p>
+                    <label><input type="radio" name="q3" value="a"> Steve Jobs</label><br>
+                    <label><input type="radio" name="q3" value="b"> Tim Berners-Lee</label><br>
+                    <label><input type="radio" name="q3" value="c"> Robert Noyce</label>
+                </div>
 
-      <!-- Q4 (Fill in the blank) -->
-      <div class="question">
-        <p>4. Fill in the blank: The latest version of HTML is __________.</p>
-        <input type="text" id="q4">
-      </div>
+                <!-- Q4 -->
+                <div class="question">
+                    <p>4. Fill in the blank: The latest version of HTML is __________.</p>
+                    <input type="text" id="q4" aria-label="Fill in the blank: The latest version of HTML is">
+                </div>
 
-      <!-- Q5 (multi-select) -->
-      <div class="question">
-        <p>5. Which are HTML5 semantics? (Select all that apply)</p>
-        <input type="checkbox" name="q5a"> &lt;nav&gt;<br>
-        <input type="checkbox" name="q5b"> &lt;h1&gt;<br>
-        <input type="checkbox" name="q5c"> &lt;section&gt;<br>
-        <input type="checkbox" name="q5d"> &lt;br&gt;
-      </div>
+                <!-- Q5 -->
+                <div class="question">
+                    <p>5. Which are HTML5 semantics? (Select all that apply)</p>
+                    <label><input type="checkbox" name="q5a"> &lt;nav&gt;</label><br>
+                    <label><input type="checkbox" name="q5b"> &lt;h1&gt;</label><br>
+                    <label><input type="checkbox" name="q5c"> &lt;section&gt;</label><br>
+                    <label><input type="checkbox" name="q5d"> &lt;br&gt;</label>
+                </div>
 
-      <button type="button" onclick="checkAnswers()">Submit</button>
-      <button type="reset" onclick="resetQuiz()">Restart</button>
-    </form>
+                <div class="button-group">
+                    <button type="button" onclick="checkAnswers()">Submit</button>
+                    <button type="reset" onclick="resetQuiz()">Restart</button>
+                </div>
+            </form>
 
-    <div id="results"></div>
-</section>
-  </main>
-
-  <script>
-       // This function allows the Restart button to work.
-    function resetQuiz() {
-        document.getElementById("results").innerHTML = "";
-        }
-
-       // Below is the code for the Submit button to function properly.
-    function checkAnswers() {
-      let score = 0;
-      let results = "";
-
-      // Question 1
-      let q1 = document.querySelector('input[name="q1"]:checked');
-      if (q1 && q1.value === "b") {
-        score++;
-        results += "Q1: Correct<br>";
-      } else {
-        results += "Q1: Incorrect (Correct: HyperText Markup Language)<br>";
-      }
-
-      // Question 2
-      let q2 = document.querySelector('input[name="q2"]:checked');
-      if (q2 && q2.value === "c") {
-        score++;
-        results += "Q2: Correct<br>";
-      } else {
-        results += "Q2: Incorrect (Correct: HTML5)<br>";
-      }
-
-      // Question 3
-      let q3 = document.querySelector('input[name="q3"]:checked');
-      if (q3 && q3.value === "b") {
-        score++;
-        results += "Q3: Correct<br>";
-      } else {
-        results += "Q3: Incorrect (Correct: Tim Berners-Lee)<br>";
-      }
-
-      // Question 4 - Fill in the blank
-      let q4 = document.getElementById("q4").value.trim().toLowerCase();
-      if (q4 === "html5") {
-        score++;
-        results += "Q4: Correct<br>";
-      } else {
-        results += "Q4: Incorrect (Correct: HTML5)<br>";
-      }
-
-      // Question 5 - More than one answer
-    var a = document.querySelector('input[name="q5a"]').checked;
-    var b = document.querySelector('input[name="q5b"]').checked;
-    var c = document.querySelector('input[name="q5c"]').checked;
-    var d = document.querySelector('input[name="q5d"]').checked;
-
-    var q5Score = 0;
-    if (a) q5Score++;
-    if (b) q5Score--;
-    if (c) q5Score++;
-    if (d) q5Score--;
-
-    if (q5Score === 2) {
-      score++;
-      results += "Q5: Correct<br>";
-    } else {
-      results += "Q5: Incorrect (Correct: &lt;nav&gt;, &lt;section&gt;)<br>";
-    }
-
-
-      // Final score
-      results += "<br><strong>Final Score: " + score + "/5</strong><br>";
-    if (score >= 3) {
-      results += "<span style='color: green;'>✅ You passed!</span>";
-    } else {
-      results += "<span style='color: red;'>❌ You did not pass.</span>";
-    }
-
-      document.getElementById("results").innerHTML = results;
-    }
-  </script>
-  <!--Code for the Footer-->
-  <footer>
-    <p>Jose Barreto Webpage Project for IT 3203 </p>
-    <p>
-        <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style="border:0;width:88px;height:31px"
-                src="https://jigsaw.w3.org/css-validator/images/vcss"
-                alt="Valid CSS!" />
-        </a>
-    </p>
-</footer>
+            <div id="results" role="status"></div>
+        </section>
+    </main>
+    <script>
+        // This function allows the Restart button to work.
+     function resetQuiz() {
+         document.getElementById("results").innerHTML = "";
+         }
+ 
+        // Below is the code for the Submit button to function properly.
+     function checkAnswers() {
+       let score = 0;
+       let results = "";
+ 
+       // Question 1
+       let q1 = document.querySelector('input[name="q1"]:checked');
+       if (q1 && q1.value === "b") {
+         score++;
+         results += "Q1: Correct<br>";
+       } else {
+         results += "Q1: Incorrect (Correct: HyperText Markup Language)<br>";
+       }
+ 
+       // Question 2
+       let q2 = document.querySelector('input[name="q2"]:checked');
+       if (q2 && q2.value === "c") {
+         score++;
+         results += "Q2: Correct<br>";
+       } else {
+         results += "Q2: Incorrect (Correct: HTML5)<br>";
+       }
+ 
+       // Question 3
+       let q3 = document.querySelector('input[name="q3"]:checked');
+       if (q3 && q3.value === "b") {
+         score++;
+         results += "Q3: Correct<br>";
+       } else {
+         results += "Q3: Incorrect (Correct: Tim Berners-Lee)<br>";
+       }
+ 
+       // Question 4 - Fill in the blank
+       let q4 = document.getElementById("q4").value.trim().toLowerCase();
+       if (q4 === "html5") {
+         score++;
+         results += "Q4: Correct<br>";
+       } else {
+         results += "Q4: Incorrect (Correct: HTML5)<br>";
+       }
+ 
+       // Question 5 - More than one answer
+     var a = document.querySelector('input[name="q5a"]').checked;
+     var b = document.querySelector('input[name="q5b"]').checked;
+     var c = document.querySelector('input[name="q5c"]').checked;
+     var d = document.querySelector('input[name="q5d"]').checked;
+ 
+     var q5Score = 0;
+     if (a) q5Score++;
+     if (b) q5Score--;
+     if (c) q5Score++;
+     if (d) q5Score--;
+ 
+     if (q5Score === 2) {
+       score++;
+       results += "Q5: Correct<br>";
+     } else {
+       results += "Q5: Incorrect (Correct: &lt;nav&gt;, &lt;section&gt;)<br>";
+     }
+ 
+ 
+       // Final score
+       results += "<br><strong>Final Score: " + score + "/5</strong><br>";
+     if (score >= 3) {
+       results += "<span style='color: green;'>✅ You passed!</span>";
+     } else {
+       results += "<span style='color: red;'>❌ You did not pass.</span>";
+     }
+ 
+       document.getElementById("results").innerHTML = results;
+     }
+   </script>
+    <!--Here is the footer-->
+    <footer>
+        <p>Jose Barreto Webpage Project for IT 3203 </p>
+        <p>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="https://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="Valid CSS!" />
+            </a>
+        </p>
+    </footer>
 </body>
 </html>
